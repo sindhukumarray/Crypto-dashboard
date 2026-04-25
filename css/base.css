@@ -1,6 +1,84 @@
 body {
   margin: 0;
+  transition: background 0.3s, color 0.3s;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #0d1117, #1f2937);
   color: #fff;
+}
+
+/* Default = DARK */
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --text: #ffffff;
+  --accent: #00bcd4;
+}
+
+/* LIGHT MODE */
+.light {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #111;
+  --accent: #007bff;
+}
+
+/* Apply variables */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.card, #search, canvas {
+  background: var(--card);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+/* DARK (default) */
+body {
+  background: #0d1117;
+  color: white;
+  transition: 0.3s;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: #f5f7fa;
+  color: black;
+}
+
+/* Card */
+.card {
+  background: #161b22;
+}
+
+body.light .card {
+  background: white;
+  color: black;
+}
+
+/* Input */
+#search {
+  background: #161b22;
+  color: white;
+}
+
+body.light #search {
+  background: white;
+  color: black;
+}
+
+/* Header/Footer */
+.header, .footer {
+  background: #0d1117;
+}
+
+body.light .header,
+body.light .footer {
+  background: #ffffff;
+  color: black;
 }
