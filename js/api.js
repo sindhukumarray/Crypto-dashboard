@@ -13,3 +13,17 @@ export async function fetchHistory(coin = "bitcoin") {
   if (!res.ok) throw new Error("History error");
   return res.json();
 }
+
+// top gainers
+export async function fetchTopGainers() {
+  const res = await fetch(
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1"
+  );
+
+  const data = await res.json();
+
+  // Sort by highest gain %
+  return data
+    .sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h)
+    .slice(0, 5);
+}

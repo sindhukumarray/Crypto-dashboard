@@ -62,3 +62,37 @@ h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
+
+
+/* top gainers */
+#gainers {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+#gainersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.gainer-card {
+  background: #161b22;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.gainer-card:hover {
+  transform: scale(1.05);
+}
+
+.gainer-card span {
+  color: #00ff9f;
+  font-weight: bold;
+}
+
+body.light .gainer-card {
+  background: white;
+}
