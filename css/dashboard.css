@@ -96,3 +96,36 @@ h1 {
 body.light .gainer-card {
   background: white;
 }
+
+/* top losers */
+#losers {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+#losersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.loser-card {
+  background: #161b22;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.loser-card:hover {
+  transform: scale(1.05);
+}
+
+.loser-card span {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+body.light .loser-card {
+  background: white;
+}

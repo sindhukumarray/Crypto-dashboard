@@ -25,5 +25,19 @@ export async function fetchTopGainers() {
   // Sort by highest gain %
   return data
     .sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h)
-    .slice(0, 5);
+    .slice(0, 6);
+}
+
+// top losers
+export async function fetchTopLosers() {
+  const res = await fetch(
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1"
+  );
+
+  const data = await res.json();
+
+  // Sort lowest % first
+  return data
+    .sort((a, b) => a.price_change_percentage_24h - b.price_change_percentage_24h)
+    .slice(0, 6);
 }

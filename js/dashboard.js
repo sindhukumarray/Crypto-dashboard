@@ -108,6 +108,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // top gainers
 import { fetchTopGainers } from "./api.js";
 
+// top losers
+import { fetchTopLosers } from "./api.js";
+
 async function renderGainers() {
   const gainers = await fetchTopGainers();
   const container = document.getElementById("gainersList");
@@ -136,3 +139,26 @@ async function loadCoin(coin) {
   }
 }
 renderGainers();
+
+//top losers
+async function renderLosers() {
+  const losers = await fetchTopLosers();
+  const container = document.getElementById("losersList");
+
+  container.innerHTML = losers.map(coin => `
+    <div class="loser-card" data-id="${coin.id}">
+      <h4>${coin.name}</h4>
+      <span>${coin.price_change_percentage_24h.toFixed(2)}%</span>
+    </div>
+  `).join("");
+
+  // Click to load coin
+  document.querySelectorAll(".loser-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const coinId = card.getAttribute("data-id");
+      loadCoin(coinId);
+    });
+  });
+}
+renderLosers();
+
