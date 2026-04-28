@@ -41,3 +41,10 @@ export async function fetchTopLosers() {
     .sort((a, b) => a.price_change_percentage_24h - b.price_change_percentage_24h)
     .slice(0, 6);
 }
+
+//converter
+
+export async function fetchRates(base = "USD") {
+  const res = await fetch(`https://api.exchangerate-api.com/v4/latest/${base}`);
+  return res.json();
+}
