@@ -63,73 +63,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-
-/* top gainers
-#gainers {
-  margin-top: 2rem;
-  text-align: left;
-}
-
-#gainersList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-}
-
-.gainer-card {
-  background: #161b22;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.gainer-card:hover {
-  transform: scale(1.05);
-}
-
-.gainer-card span {
-  color: #00ff9f;
-  font-weight: bold;
-}
-
-body.light .gainer-card {
-  background: white;
-}
-
-/* top losers */
-/* #losers {
-  margin-top: 2rem;
-  text-align: left;
-}
-
-#losersList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-}
-
-.loser-card {
-  background: #161b22;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.loser-card:hover {
-  transform: scale(1.05);
-}
-
-.loser-card span {
-  color: #ff4d4d;
-  font-weight: bold;
-}
-
-body.light .loser-card {
-  background: white;
-} */ 
-
 /* FLEX CONTAINER */
 #gainersList, #losersList {
   display: flex;
@@ -172,6 +105,7 @@ body.light .loser-card {
 .loser-card h4 {
   margin: 5px 0;
   font-size: 15px;
+  font-weight: 500;
 }
 
 /* PERCENT */
@@ -196,4 +130,90 @@ body.light .loser-card {
 
 .gainer-card, .loser-card {
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Wrapper */
+.market-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Each card */
+.market-card {
+  flex: 1;
+  min-width: 300px;
+
+  background: rgba(255,255,255,0.06);
+   border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+
+  padding: 20px;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Title */
+.market-card h2 {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Inner list layout */
+#gainersList, #losersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+/* Item style */
+.gainer-card, .loser-card {
+  background: rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 80px;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  cursor: pointer;
+ box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+ 
+  transition: 0.3s;
+}
+
+/* Hover */
+.gainer-card:hover {
+  transform: translateY(-5px);
+  border-left: 1px solid #00ff9f;
+   box-shadow: 0 0 15px rgba(0,255,159,0.3);
+}
+
+.loser-card:hover {
+  transform: translateX(-5px);
+  border-left: 1px solid #ff4d4d;
+   box-shadow: 0 0 15px rgba(255,77,77,0.3);
+}
+
+/* Text */
+.gainer-card span {
+  color: #00ff9f;
+  font-weight: bold;
+}
+
+.loser-card span {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* Light mode */
+body.light .market-card {
+  background: white;
+  color: black;
 }
