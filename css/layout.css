@@ -1,0 +1,54 @@
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .header nav {
+    flex-wrap: wrap;
+    margin-top: 8px;
+    justify-content: center;
+  }
+
+  .search-box {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .market-section {
+    flex-direction: column;
+  }
+
+  .market-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #gainersList, #losersList {
+    grid-template-columns: 1fr ;
+  }
+}
+
+/* 📱 SMALL DEVICES */
+@media (max-width: 480px) {
+
+  #gainersList, #losersList {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
