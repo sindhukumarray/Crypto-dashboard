@@ -64,7 +64,7 @@ h1 {
 }
 
 
-/* top gainers */
+/* top gainers
 #gainers {
   margin-top: 2rem;
   text-align: left;
@@ -98,7 +98,7 @@ body.light .gainer-card {
 }
 
 /* top losers */
-#losers {
+/* #losers {
   margin-top: 2rem;
   text-align: left;
 }
@@ -128,4 +128,72 @@ body.light .gainer-card {
 
 body.light .loser-card {
   background: white;
+} */ 
+
+/* FLEX CONTAINER */
+#gainersList, #losersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* CARD STYLE */
+.gainer-card, .loser-card {
+  flex: 1 1 160px;
+  max-width: 200px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  border: 1px solid transparent;
+}
+
+/* HOVER EFFECT */
+.gainer-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border: 1px solid #00ff9f;
+}
+
+.loser-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border: 1px solid #ff4d4d;
+}
+
+/* TITLE */
+.gainer-card h4,
+.loser-card h4 {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+/* PERCENT */
+.gainer-card span {
+  color: #00ff9f;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.loser-card span {
+  color: #ff4d4d;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* LIGHT MODE */
+body.light .gainer-card,
+body.light .loser-card {
+  background: white;
+  color: black;
+}
+
+.gainer-card, .loser-card {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
