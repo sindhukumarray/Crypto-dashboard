@@ -6,6 +6,31 @@ const toCurrency = document.getElementById("toCurrency");
 const convertBtn = document.getElementById("convertBtn");
 const result = document.getElementById("result");
 
+// 🔥 Load ALL currencies dynamically
+async function loadCurrencies() {
+  const data = await fetchRates("USD");
+
+  const currencies = Object.keys(data.rates);
+
+  currencies.forEach(currency => {
+    const option1 = document.createElement("option");
+    option1.value = currency;
+    option1.textContent = currency;
+
+    const option2 = document.createElement("option");
+    option2.value = currency;
+    option2.textContent = currency;
+
+    fromCurrency.appendChild(option1);
+    toCurrency.appendChild(option2);
+  });
+
+  // default selection
+  fromCurrency.value = "USD";
+  toCurrency.value = "INR";
+}
+
+// Convert
 convertBtn.addEventListener("click", async () => {
   const amt = parseFloat(amount.value);
 
@@ -14,10 +39,13 @@ convertBtn.addEventListener("click", async () => {
     return;
   }
 
-  const ratesData = await fetchRates(fromCurrency.value);
-  const rate = ratesData.rates[toCurrency.value];
+  const data = await fetchRates(fromCurrency.value);
+  const rate = data.rates[toCurrency.value];
 
   const converted = (amt * rate).toFixed(2);
 
   result.innerText = `${amt} ${fromCurrency.value} = ${converted} ${toCurrency.value}`;
 });
+
+// Init
+loadCurrencies();
