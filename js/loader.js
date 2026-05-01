@@ -1,16 +1,11 @@
-const isSubPage = window.location.pathname.includes("/pages/");
-const base = isSubPage ? "../" : "";
+async function loadComponent(id, file) {
+  const isSubPage = window.location.pathname.includes("/pages/");
+  const basePath = isSubPage ? "../" : "";
+
+  const res = await fetch(`${basePath}components/${file}`);
+  const data = await res.text();
+  document.getElementById(id).innerHTML = data;
+}
 
 loadComponent("header", "header.html");
-loadComponent("footer", "footer.html");
-
-// Fix links after loading
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    document.querySelectorAll("a").forEach(link => {
-      if (link.getAttribute("href")) {
-        link.href = base + link.getAttribute("href");
-      }
-    });
-  }, 100);
-});
+zloadComponent("footer", "footer.html");
