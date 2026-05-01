@@ -8,7 +8,7 @@ const favList = document.getElementById("favList");
 
 let chart;
 
-// 🔍 Search Event
+//  Search Event
 search.addEventListener("keypress", async (e) => {
   if (e.key === "Enter") {
     const coin = search.value.toLowerCase().trim();
@@ -28,15 +28,15 @@ search.addEventListener("keypress", async (e) => {
   }
 });
 
-// 📊 Render Result
+// Render Result
 function renderResult(data) {
   results.innerHTML = `
     <div class="card">
       <img src="${data.image.small}" />
       <h2>${data.name} (${data.symbol.toUpperCase()})</h2>
-      <p>💰 $${data.market_data.current_price.usd}</p>
-      <p>📉 ${data.market_data.price_change_percentage_24h.toFixed(2)}%</p>
-      <button id="favBtn">⭐ Add to Favorites</button>
+      <p> $${data.market_data.current_price.usd}</p>
+      <p> ${data.market_data.price_change_percentage_24h.toFixed(2)}%</p>
+      <button id="favBtn"> Add to Favorites</button>
     </div>
   `;
 
@@ -46,7 +46,7 @@ function renderResult(data) {
   };
 }
 
-// 📈 Chart
+//  Chart
 async function renderChart(coin) {
   const history = await fetchHistory(coin);
 
@@ -79,7 +79,7 @@ function renderFavorites() {
   favorites.forEach(coin => {
     const li = document.createElement("li");
 
-    li.textContent = `⭐ ${coin}`;
+    li.textContent = ` ${coin}`;
     li.classList.add("fav-item");
 
     //  CLICK TO REMOVE
