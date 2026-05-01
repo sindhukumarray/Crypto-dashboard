@@ -9,10 +9,10 @@ function applySavedTheme() {
   }
 }
 
-// Apply theme immediately on load
+// to Apply  on load
 applySavedTheme();
 
-// 👇 Use event delegation (IMPORTANT FIX)
+//  Use event toggle theme
 document.addEventListener("click", function (e) {
   if (e.target && e.target.id === "themeToggle") {
 

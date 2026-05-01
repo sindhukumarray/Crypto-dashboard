@@ -63,7 +63,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* FLEX CONTAINER */
+/* TO FLEX CONTAINER */
 #gainersList, #losersList {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +71,7 @@ h1 {
   justify-content: center;
 }
 
-/* CARD STYLE */
+/* TO CARD STYLE */
 .gainer-card, .loser-card {
   flex: 1 1 160px;
   max-width: 200px;
@@ -89,7 +89,7 @@ h1 {
   border: 1px solid transparent;
 }
 
-/* HOVER EFFECT */
+/* TO APPLE HOVER EFFECT */
 .gainer-card:hover {
   transform: translateY(-6px) scale(1.02);
   border: 1px solid #00ff9f;
@@ -100,7 +100,7 @@ h1 {
   border: 1px solid #ff4d4d;
 }
 
-/* TITLE */
+/* TO TITLE */
 .gainer-card h4,
 .loser-card h4 {
   margin: 5px 0;
@@ -108,7 +108,7 @@ h1 {
   font-weight: 500;
 }
 
-/* PERCENT */
+/* TO PERCENT */
 .gainer-card span {
   color: #00ff9f;
   font-weight: bold;
@@ -121,7 +121,7 @@ h1 {
   font-size: 16px;
 }
 
-/* LIGHT MODE */
+/*TO  LIGHT MODE */
 body.light .gainer-card,
 body.light .loser-card {
   background: white;
@@ -132,7 +132,7 @@ body.light .loser-card {
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Wrapper */
+/*TO  Wrapper */
 .market-section {
   display: flex;
   gap: 20px;
@@ -140,7 +140,7 @@ body.light .loser-card {
   flex-wrap: wrap;
 }
 
-/* Each card */
+/* TO Each card */
 .market-card {
   flex: 1;
   min-width: 300px;
@@ -155,21 +155,21 @@ body.light .loser-card {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-/* Title */
+/* TO Title */
 .market-card h2 {
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-/* Inner list layout */
+/* TO Inner list layout */
 #gainersList, #losersList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 12px;
 }
 
-/* Item style */
+/*TO  Item style */
 .gainer-card, .loser-card {
   background: rgba(255,255,255,0.08);
   padding: 12px;
@@ -188,7 +188,7 @@ body.light .loser-card {
   transition: 0.3s;
 }
 
-/* Hover */
+/* TO Hover */
 .gainer-card:hover {
   transform: translateY(-5px);
   border-left: 1px solid #00ff9f;
@@ -201,7 +201,7 @@ body.light .loser-card {
    box-shadow: 0 0 15px rgba(255,77,77,0.3);
 }
 
-/* Text */
+/* TO Text */
 .gainer-card span {
   color: #00ff9f;
   font-weight: bold;
@@ -212,13 +212,13 @@ body.light .loser-card {
   font-weight: bold;
 }
 
-/* Light mode */
+/*TO  Light mode */
 body.light .market-card {
   background: white;
   color: black;
 }
 
-/* ===== Converter UI ===== */
+/*TO APPLE Converter UI  */
 
 .converter-page {
   display: flex;
@@ -238,7 +238,7 @@ body.light .market-card {
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Inputs layout */
+/* TO Inputs layout */
 .converter-inputs {
   display: flex;
   gap: 10px;
@@ -255,13 +255,13 @@ body.light .market-card {
   justify-content: center;
 }
 
-/* Arrow */
+/* TO ARROW APPLE */
 .arrow {
   font-size: 20px;
   align-self: center;
 }
 
-/* Button */
+/* TO Button */
 #convertBtn {
   background: #00bcd4;
   color: black;
@@ -281,7 +281,7 @@ body.light .market-card {
 }
 
 
-/* Result */
+/*TO SHOW  Result */
 .result-text {
   margin-top: 20px;
   font-size: 20px;

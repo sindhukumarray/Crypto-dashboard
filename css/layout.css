@@ -1,4 +1,4 @@
-/* 📱 MOBILE RESPONSIVE */
+/* to MOBILE RESPONSIVE */
 @media (max-width: 768px) {
 
   .header {
@@ -33,7 +33,7 @@
   }
 }
 
-/* 📱 SMALL DEVICES */
+/* to SMALL DEVICES */
 @media (max-width: 480px) {
 
   #gainersList, #losersList {
@@ -53,7 +53,7 @@
   }
 }
  
-/* about section */
+/* to about section */
 .about {
   max-width: 900px;
   margin: auto;
@@ -81,14 +81,14 @@
   justify-content: center;
 }
 
-/* Tablet */
+/* to Tablet */
 @media (max-width: 900px) {
   .about-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
+/* to  Mobile */
 @media (max-width: 600px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -125,7 +125,7 @@ body.light .about-card {
   color: black;
 }
 
-/* Hover upgrade */
+/*to improve in Hover about card */
 .about-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);

@@ -6,7 +6,7 @@ const toCurrency = document.getElementById("toCurrency");
 const convertBtn = document.getElementById("convertBtn");
 const result = document.getElementById("result");
 
-// 🔥 Load ALL currencies dynamically
+// to  Load ALL currencies dynamically
 async function loadCurrencies() {
   const data = await fetchRates("USD");
 
@@ -47,5 +47,4 @@ convertBtn.addEventListener("click", async () => {
   result.innerText = `${amt} ${fromCurrency.value} = ${converted} ${toCurrency.value}`;
 });
 
-// Init
 loadCurrencies();

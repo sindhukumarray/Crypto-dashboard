@@ -22,7 +22,7 @@ export async function fetchTopGainers() {
 
   const data = await res.json();
 
-  // Sort by highest gain %
+  // Sort by highest gain
   return data
     .sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h)
     .slice(0, 6);
@@ -36,7 +36,7 @@ export async function fetchTopLosers() {
 
   const data = await res.json();
 
-  // Sort lowest % first
+  // to Sort lowest first
   return data
     .sort((a, b) => a.price_change_percentage_24h - b.price_change_percentage_24h)
     .slice(0, 6);

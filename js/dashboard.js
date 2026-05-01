@@ -8,7 +8,7 @@ const favList = document.getElementById("favList");
 
 let chart;
 
-//  Search Event
+// to Search Event
 search.addEventListener("keypress", async (e) => {
   if (e.key === "Enter") {
     const coin = search.value.toLowerCase().trim();
@@ -28,7 +28,7 @@ search.addEventListener("keypress", async (e) => {
   }
 });
 
-// Render Result
+//to  Render Result
 function renderResult(data) {
   results.innerHTML = `
     <div class="card">
@@ -46,7 +46,7 @@ function renderResult(data) {
   };
 }
 
-//  Chart
+//  to show Chart
 async function renderChart(coin) {
   const history = await fetchHistory(coin);
 
@@ -68,7 +68,7 @@ async function renderChart(coin) {
   });
 }
 
-// Favorites
+// to add Favorites
 function renderFavorites() {
   const favList = document.getElementById("favList");
 
@@ -91,6 +91,7 @@ function renderFavorites() {
   });
 }
 
+// to remove in add
 function removeFavorite(coin) {
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
@@ -144,7 +145,7 @@ async function renderGainers() {
     </div>
   `).join("");
 
-  // 👉 Click to load coin
+  // Click to load coin
   document.querySelectorAll(".gainer-card").forEach(card => {
     card.addEventListener("click", () => {
       const coinId = card.getAttribute("data-id");
@@ -152,7 +153,7 @@ async function renderGainers() {
     });
   });
 }
-
+// to find not coin
 async function loadCoin(coin) {
   try {
     loadCoin(coin);
