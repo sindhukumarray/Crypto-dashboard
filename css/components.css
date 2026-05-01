@@ -7,6 +7,8 @@ body {
   min-height: 100vh;
   background: linear-gradient(135deg, #0d1117, #1f2937);
   color: #e6edf3;
+  
+  padding-top: 80px;
 }
 
 /* HEADER */
@@ -19,6 +21,13 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+ flex-wrap: wrap;
+  position: fixed;
+  overflow: visible;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+   width: 100%; 
 }
 
 .header h2 {
@@ -30,7 +39,11 @@ body {
 .header nav {
   display: flex;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  overflow-x: auto;
 }
+
 
 .header nav a {
   color: #00e5ff;
@@ -38,6 +51,22 @@ body {
   text-decoration: none;
   font-weight: 500;
   position: relative;
+  white-space: nowrap; 
+}
+
+#themeToggle {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 50px;
+
+  padding: px 12px;
+  border-radius: 18px;
+
+  background: #00bcd4;
+  color: white;
+  border: none;
+
+  cursor: pointer;
 }
 
 /* underline hover */
@@ -56,12 +85,14 @@ body {
   width: 100%;
 }
 
+
 /* MAIN */
 main {
   flex: 1;
   max-width: 1000px;
   margin: auto;
   padding: 2rem;
+  
 }
 
 /* FOOTER */
