@@ -68,16 +68,38 @@ async function renderChart(coin) {
   });
 }
 
-// ⭐ Favorites
+// Favorites
 function renderFavorites() {
-  const favs = loadFavorites();
+  const favList = document.getElementById("favList");
 
-  favList.innerHTML = favs
-    .map(f => `<li>⭐ ${f}</li>`)
-    .join("");
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  favList.innerHTML = "";
+
+  favorites.forEach(coin => {
+    const li = document.createElement("li");
+
+    li.textContent = `⭐ ${coin}`;
+    li.classList.add("fav-item");
+
+    //  CLICK TO REMOVE
+    li.addEventListener("click", () => {
+      removeFavorite(coin);
+    });
+
+    favList.appendChild(li);
+  });
 }
 
-renderFavorites();
+function removeFavorite(coin) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  favorites = favorites.filter(c => c !== coin);
+
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+
+  renderFavorites(); 
+}
 
 // Theme Toggle
 document.addEventListener("DOMContentLoaded", () => {
