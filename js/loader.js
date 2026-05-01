@@ -1,10 +1,22 @@
 async function loadComponent(id, file) {
-  const isSubPage = window.location.pathname.includes("/pages/");
-  const basePath = isSubPage ? "../" : "";
+  try {
+    // detect if inside /pages/
+    const isSubPage = window.location.pathname.includes("/pages/");
 
-  const res = await fetch(`${basePath}components/${file}`);
-  const data = await res.text();
-  document.getElementById(id).innerHTML = data;
+    // correct base path
+    const basePath = isSubPage ? "../" : "./";
+
+    const res = await fetch(`${basePath}components/${file}`);
+
+    if (!res.ok) throw new Error("Component not found");
+
+    const data = await res.text();
+
+    document.getElementById(id).innerHTML = data;
+
+  } catch (error) {
+    console.error("Error loading component:", error);
+  }
 }
 
 loadComponent("header", "header.html");
