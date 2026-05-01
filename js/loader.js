@@ -8,4 +8,4 @@ async function loadComponent(id, file) {
 }
 
 loadComponent("header", "header.html");
-zloadComponent("footer", "footer.html");
+loadComponent("footer", "footer.html");
